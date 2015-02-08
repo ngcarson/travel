@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Idea: MyString
+  Destination: MyString
+  Start: 2015-02-08
+  End: 2015-02-08
+  Tags: MyString
+
+two:
+  Idea: MyString
+  Destination: MyString
+  Start: 2015-02-08
+  End: 2015-02-08
+  Tags: MyString
