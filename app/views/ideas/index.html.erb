@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page-header">
-  <h1>Listing Ideas</h1>
+  <h1>Travel Ideas</h1>
 </div>
-
-<table>
+<table id="ideas" class="display">
   <thead>
     <tr>
       <th>Idea</th>
@@ -15,7 +14,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @ideas.each do |idea| %>
       <tr>
@@ -24,11 +22,11 @@
         <td><%= idea.Start %></td>
         <td><%= idea.End %></td>
         <td><%= idea.Tags %></td>
-        <td><%= link_to 'Show', idea %></td>
+        <!--<td><%= link_to 'Show', idea %></td>
         <span>
           <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
           <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </span>
+        </span>-->
       </tr>
     <% end %>
   </tbody>
