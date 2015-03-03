@@ -21,3 +21,27 @@
 
 en:
   hello: "Hello world"
+
+en:  
+  activerecord:
+    models: 
+      user: "User"
+    attributes:
+      user:
+        email: "Email address"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "cannot be empty"
+
+en:
+  activerecord:
+    attributes:
+      first_name: "First Name"
+
+en:
+  activerecord:
+    attributes:
+      last_name: "Last Name"
