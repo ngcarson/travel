@@ -1,5 +1,8 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  # Guests can only see index & show.
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /ideas
   # GET /ideas.json
@@ -14,7 +17,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas/new
   def new
-    @idea = Idea.new
+    @idea = current_user.ideas.build
   end
 
   # GET /ideas/1/edit
@@ -24,7 +27,7 @@ class IdeasController < ApplicationController
   # POST /ideas
   # POST /ideas.json
   def create
-    @idea = Idea.new(idea_params)
+    @idea = current_user.ideas.build(idea_params)
 
     respond_to do |format|
       if @idea.save
@@ -64,7 +67,12 @@ class IdeasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
-      @idea = Idea.find(params[:id])
+      @idea = Idea.find_by(id: params[:id])
+    end
+
+    def correct_user
+      @idea = current_user.ideas.find_by(id: params[:id])
+      redirect_to ideas_path, notice: "You are not allowed to edit this." if @idea.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
