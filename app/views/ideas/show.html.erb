@@ -25,8 +25,16 @@
   <%= @idea.Tags %>
 </p>
 
+<div id="comments">
+  <h2>
+    <%= @idea.comments.count %>
+  </h2>
+    <%= render @idea.comments %>
+  <h3>Reply to thread</h3>
+    <%= render "comments/form" %>
+</div>
+
 <% if @idea.user == current_user %>
   <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <% end %>
 <%= link_to 'Back', ideas_path %>
-

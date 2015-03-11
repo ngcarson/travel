@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :ideas
-
   devise_for :users
+  resources :ideas do 
+    resources :comments
+  end
+  
   root "pages#home"
   # get "create" => "pages#create"
   get "ideas" => "pages#ideas"
