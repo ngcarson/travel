@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem "paperclip", "~> 4.2"
 gem 'devise', '~> 3.4.1'
 
 group :development, :test do

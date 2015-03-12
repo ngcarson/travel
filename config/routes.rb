@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api do
+    resources :ideas
+  end
+
   devise_for :users
   resources :ideas do 
     resources :comments
