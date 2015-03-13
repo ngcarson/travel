@@ -6,21 +6,38 @@ class Api::IdeasController < ApplicationController
 	end
 
 	def show
-		list = Idea.find(params[:id])
-		render json: list
+		idea = Idea.find(params[:id])
+		render json: idea
 	end
 
 	def create
-		list = Idea.new(list_params)
-		if list.save
-			head 200
+		idea = Idea.new(idea_params)
+		if idea.save
+			render json: {
+				status: 200, 
+				message: "Successfully created Idea.",
+				idea: idea
+			}.to_json
 		else
-			head 500 
+			render json: {
+				status: 500, 
+				error: idea.errors
+			}.to_json
 		end
 	end
 
+	def destroy
+	  idea = Idea.find(params[:id])
+	  idea.destroy
+
+	  respond_to do |format|
+	    format.html { redirect_to(ideas_url) }
+	    format.xml  { head :ok }
+  	end
+	end
+
 	private
-	def list_params
-		params.require("idea").permit("idea")
+	def idea_params
+		params.require(:idea).permit(:image, :Idea, :Destination, :Start, :End, :Tags)
 	end
 end
