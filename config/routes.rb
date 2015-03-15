@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :ideas, only: [:index, :show, :create, :update, :destroy]
   end
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :ideas do 
     resources :comments
   end
