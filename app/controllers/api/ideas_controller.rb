@@ -1,17 +1,17 @@
-class Api::IdeasController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+class Api::IdeasController < Api::ApiController
 
 	def index
+		Rails.logger.info "Current user: #{current_user.inspect}"
 		render json: Idea.all
 	end
 
 	def show
-		idea = Idea.find(params[:id])
+		idea = current_user.ideas.find(params[:id])
 		render json: idea
 	end
 
 	def create
-		idea = Idea.new(idea_params)
+		idea = current_user.ideas.new(idea_params)
 		if idea.save
 			render json: {
 				status: 200, 
@@ -19,15 +19,30 @@ class Api::IdeasController < ApplicationController
 				idea: idea
 			}.to_json
 		else
-			render json: {
-				status: 500, 
+			render status: 422, json: {
 				error: idea.errors
 			}.to_json
 		end
 	end
 
+	def update
+		idea = current_user.ideas.find(params[:id])
+		if idea.update(idea_params)
+			render json: {
+				status: 200,
+				message: "Successfully updated.",
+				idea: idea
+			}.to_json
+		else
+	    render status: 422, json: {
+	      message: "The Idea could not be updated.",
+	      idea: idea
+	    }.to_json
+		end
+	end
+
 	def destroy
-	  idea = Idea.find(params[:id])
+	  idea = current_user.idea.find(params[:id])
 	  idea.destroy
 
 	  respond_to do |format|
