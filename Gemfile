@@ -16,6 +16,8 @@ gem 'simple_form'
 gem "paperclip", "~> 4.2"
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'devise', '~> 3.4.1'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
 	gem 'sqlite3'

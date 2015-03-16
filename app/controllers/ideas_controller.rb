@@ -8,6 +8,10 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
+      marker.lat idea.latitude
+      marker.lng idea.longitude
+    end
   end
 
   # GET /ideas/1
@@ -77,6 +81,6 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:Idea, :Destination, :Start, :End, :Tags, :image)
+      params.require(:idea).permit(:latitude, :longitude, :Idea, :Destination, :Start, :End, :Tags, :image)
     end
 end

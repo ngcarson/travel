@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   validates :first_name, presence: true
-
+  
   def self.human_attribute_name(attr, options = {})
     attr == :first_name ? 'First Name' : super
   end

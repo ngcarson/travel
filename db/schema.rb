@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311153759) do
+ActiveRecord::Schema.define(version: 20150316115220) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20150311153759) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "ideas", force: :cascade do |t|
+    t.float    "Latitude"
+    t.float    "Longitude"
     t.string   "Idea"
     t.string   "Destination"
     t.date     "Start"
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150311153759) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "ideas", ["user_id"], name: "index_ideas_on_user_id"
@@ -57,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150311153759) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
