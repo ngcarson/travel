@@ -2,6 +2,8 @@
   <p>
     <%= comment.comment %><br>
     <%= comment.user.email if comment.user %><br>
+    Published <em><%= time_ago_in_words(comment.created_at) %></em> ago.<br>
+    <%= link_to "Edit", edit_idea_comment_path(comment.idea, comment) %>
     <%= link_to "Delete", [comment.idea, comment], method: :delete, data: { confirm: "Are you sure?" } %>
   </p>
 </div>

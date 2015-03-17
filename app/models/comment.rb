@@ -2,5 +2,5 @@ class Comment < ActiveRecord::Base
   belongs_to :idea
   belongs_to :user
 
-  #validates :text, :presence => true, :length => { :minimum => 10 }
+  validates :comment, length: { maximum: 10, too_long: "%{count} characters is the maximum allowed" }, :allow_blank => false
 end

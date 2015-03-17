@@ -8,7 +8,23 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_to idea_path(@idea)
 		else
-			render 'new'
+      render 'edit'
+		end
+	end
+
+	def edit
+		@idea = Idea.find(params[:idea_id])
+		@comment = @idea.comments.find(params[:id])
+	end
+
+	def update
+		@idea = Idea.find(params[:idea_id])
+		@comment = @idea.comments.find(params[:id])
+
+		if @comment.update(params[:comment].permit(:comment))
+			redirect_to idea_path(@idea)
+		else
+			render 'edit'
 		end
 	end
 
