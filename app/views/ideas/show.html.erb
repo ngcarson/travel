@@ -41,7 +41,7 @@
   <h2>
     <%= @idea.comments.count %>
   </h2>
-    <%= render @idea.comments %>
+    <%= render @idea.comments.reverse %>
   <h3>Reply to thread</h3>
     <%= render "comments/form" %>
 </div>
