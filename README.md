@@ -2,4 +2,4 @@
 
 This is the Travel Ideas Forum Project.
 
-by [Carson Ng & Kit Man So]
+by [Carson Ng, So Man Kit & Chan Yuk Lun]
