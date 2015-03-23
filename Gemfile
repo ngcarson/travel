@@ -18,6 +18,8 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'devise', '~> 3.4.1'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
 	gem 'sqlite3'

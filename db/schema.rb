@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316115220) do
+ActiveRecord::Schema.define(version: 20150323152420) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -25,8 +25,6 @@ ActiveRecord::Schema.define(version: 20150316115220) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "ideas", force: :cascade do |t|
-    t.float    "Latitude"
-    t.float    "Longitude"
     t.string   "Idea"
     t.string   "Destination"
     t.date     "Start"
@@ -63,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150316115220) do
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
