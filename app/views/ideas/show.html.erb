@@ -46,8 +46,8 @@
 <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Back', ideas_path %></button>
 
 <div id="comments">
-  <h2>
-    <%= @idea.comments.count %> <span id="count">Comment(s)</span>
+  <h2 class="count">
+    <%= @idea.comments.count %> <span id="cnt">Comment(s)</span>
   </h2>
     <%= render @idea.comments.reverse %>
   <h3>Reply to thread</h3>

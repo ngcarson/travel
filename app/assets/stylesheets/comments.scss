@@ -3,6 +3,10 @@
 	padding: 5px;
 }
 
+h2 {
+	color: #34495e;
+}
+
 p {
 	padding: 2px;
 	margin-left: 10px;
@@ -32,10 +36,6 @@ img {
 	margin-bottom: 10px;
 }
 
-h2 {
-	color: #e74c3c;
-}
-
 .details {
 	border: 1px solid #bdc3c7;
 	border-radius: 10px;
@@ -43,8 +43,14 @@ h2 {
 	background-color: #ecf0f1;
 }
 
-span#count {
-	font-size: 16px;	
+h2.count {
+	color: #e74c3c;
+	font-size: 40px;
+}
+
+span#cnt {
+	color: #e74c3c;
+	font-size: 20px;	
 	font-style: italic;
 }
 
@@ -52,4 +58,26 @@ div#map {
 	margin-top: 20px;
 	border-radius: 20px;
 	border: 1px solid #bdc3c7;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.btn-alert {
+  color: #fff;
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+a:link {
+    text-decoration: none;
 }
