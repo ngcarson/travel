@@ -2,51 +2,54 @@
 
 <%= image_tag @idea.image.url(:medium) %>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @idea.latitude %>
-</p>
+<div class="details">
+  <p>
+    <strong>Latitude:</strong>
+    <%= @idea.latitude %>
+  </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @idea.longitude %>
-</p>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @idea.longitude %>
+  </p>
 
-<p>
-  <strong>Idea:</strong>
-  <%= @idea.Idea %>
-</p>
+  <p>
+    <strong>Idea:</strong>
+    <%= @idea.Idea %>
+  </p>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @idea.Destination %>
-</p>
+  <p>
+    <strong>Destination:</strong>
+    <%= @idea.Destination %>
+  </p>
 
-<p>
-  <strong>Start:</strong>
-  <%= @idea.Start %>
-</p>
+  <p>
+    <strong>Start:</strong>
+    <%= @idea.Start %>
+  </p>
 
-<p>
-  <strong>End:</strong>
-  <%= @idea.End %>
-</p>
+  <p>
+    <strong>End:</strong>
+    <%= @idea.End %>
+  </p>
 
-<p>
-  <strong>Tags:</strong>
-  <%= @idea.Tags %>
-</p>
+  <p>
+    <strong>Tags:</strong>
+    <%= @idea.Tags %>
+  </p>
+</div>
+
+<% if @idea.user == current_user %>
+  <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Edit', edit_idea_path(@idea) %></button>
+  <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Delete', idea_path(@idea), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+<% end %>
+<button type="button" class="btn btn-danger btn-xs"><%= link_to 'Back', ideas_path %></button>
 
 <div id="comments">
   <h2>
-    <%= @idea.comments.count %>
+    <%= @idea.comments.count %> <span id="count">Comment(s)</span>
   </h2>
     <%= render @idea.comments.reverse %>
   <h3>Reply to thread</h3>
     <%= render "comments/form" %>
 </div>
-
-<% if @idea.user == current_user %>
-  <%= link_to 'Edit', edit_idea_path(@idea) %> |
-<% end %>
-<%= link_to 'Back', ideas_path %>

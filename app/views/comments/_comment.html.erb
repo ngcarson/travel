@@ -1,9 +1,9 @@
 <div class="comment">
   <p>
-    <%= comment.comment %><br>
-    <%= comment.user.email if comment.user %><br>
-    Published <em><%= time_ago_in_words(comment.created_at) %></em> ago.<br>
-    <%= link_to "Edit", edit_idea_comment_path(comment.idea, comment) %>
-    <%= link_to "Delete", [comment.idea, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+    <span class="feedback"><%= comment.comment %><br></span>
+    <span class="email"><%= comment.user.email if comment.user %><br></span>
+    <span class="publish">Published <em><%= time_ago_in_words(comment.created_at) %></em> ago.<br></span>
+    <button type="button" class="btn btn-warning btn-xs"><%= link_to "Edit", edit_idea_comment_path(comment.idea, comment) %></button>
+    <button type="button" class="btn btn-info btn-xs"><%= link_to "Delete", [comment.idea, comment], method: :delete, data: { confirm: "Are you sure?" } %></button>
   </p>
 </div>
