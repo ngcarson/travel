@@ -37,11 +37,11 @@
   </div>
   <div class="field">
     <strong>Start</strong><br>
-    <%= f.date_select :Start %>
+    <%= f.date_select :Start, :order => [:month, :day, :year] %>
   </div>
   <div class="field">
     <strong>End</strong><br>
-    <%= f.date_select :End %>
+    <%= f.date_select :End, :order => [:month, :day, :year] %>
   </div>
   <div class="actions"><br>
     <%= f.submit class: "btn btn-primary"%>

@@ -45,3 +45,10 @@ en:
   activerecord:
     attributes:
       last_name: "Last Name"
+
+en:
+  date:
+    order:
+      - :month
+      - :day
+      - :year
