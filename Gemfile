@@ -21,6 +21,7 @@ gem 'gmaps4rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'tzinfo-data', '~> 1.2015.2'
+gem 'rmagick'
 
 group :development, :test do
 	gem 'sqlite3'
