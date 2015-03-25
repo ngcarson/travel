@@ -20,6 +20,8 @@ gem 'gmaps4rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'tzinfo-data', '~> 1.2015.2'
+gem 'mini_magick'
+gem 'jquery-ui-rails', '~> 5.0.3'
 
 group :development, :test do
 	gem 'sqlite3'
