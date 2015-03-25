@@ -40,10 +40,10 @@
 </div>
 
 <% if @idea.user == current_user %>
-  <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Edit', edit_idea_path(@idea) %></button>
-  <button type="button" class="btn btn-danger btn-xs"><%= link_to 'Delete', idea_path(@idea), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <%= link_to "Edit", edit_idea_path(@idea), class: 'btn btn-danger btn-xs' %>
+  <%= link_to "Delete", idea_path(@idea), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
 <% end %>
-<button type="button" class="btn btn-danger btn-xs"><%= link_to 'Back', ideas_path %></button>
+<%= link_to "Back", ideas_path, class: 'btn btn-danger btn-xs' %>
 
 <div id="comments">
   <h2 class="count">

@@ -7,13 +7,12 @@
   <thead>
     <tr>
       <th>Idea</th>
-      <th>User</td>
+      <th>User</th>
       <th>Destination</th>
       <th>Start</th>
       <th>End</th>
       <th>Tags</th>
       <th></th>
-      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +24,7 @@
         <td><%= idea.Start %></td>
         <td><%= idea.End %></td>
         <td><%= idea.Tags %></td>
-        <td><button type="button" class="btn btn-alert btn-xs"><%= link_to 'Show', idea %></button></td>
+        <td><%= link_to "Show", idea, class: 'btn btn-alert btn-xs' %></td>
         <!--<% if idea.user == current_user %>
           <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= link_to 'Edit', edit_idea_path(idea) %></td>

@@ -34,7 +34,6 @@ class User < ActiveRecord::Base
       else
         user = User.create(email: data["email"],
           provider:access_token.provider,
-          email: data["email"],
           uid: access_token.uid ,
           password: Devise.friendly_token[0,20],
         )
