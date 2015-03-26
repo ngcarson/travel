@@ -7,16 +7,16 @@ class User < ActiveRecord::Base
   has_many :ideas
   has_many :comments
 
-  validates :username, presence: true, length: { maximum: 10 }
+  validates :username, presence: true, length: { minimum: 3 }
   validates_uniqueness_of :username
 
-  validates :first_name, presence: true, length: { maximum: 20 }, format: { with:/\A[a-zA-Z_ ]+\Z/, message: 'Only letters are allowed' }
+  validates :first_name, presence: true, length: { minimum: 3 }, format: { with:/\A[a-zA-Z_ ]+\Z/, message: 'Only letters are allowed' }
   
   def self.human_attribute_name(attr, options = {})
     attr == :first_name ? 'First Name' : super
   end
 
-  validates :last_name, presence: true, length: { maximum: 20 }, format: { with:/\A[a-zA-Z_ ]+\Z/, message: 'Only letters are allowed' }
+  validates :last_name, presence: true, length: { minimum: 3 }, format: { with:/\A[a-zA-Z_ ]+\Z/, message: 'Only letters are allowed' }
 
   def self.human_attribute_name(attr, options = {})
     attr == :last_name ? 'Last Name' : super
