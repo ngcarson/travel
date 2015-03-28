@@ -19,7 +19,7 @@
     <% @ideas.each do |idea| %>
       <tr>
         <td><%= idea.Idea %></td>
-        <td><%= idea.user.username if idea.user %></td>
+        <td><%= idea.user.email if idea.user %></td>
         <td><%= idea.Destination %></td>
         <td><%= idea.Start %></td>
         <td><%= idea.End %></td>

@@ -6,7 +6,7 @@ config.omniauth :google_oauth2, "299785365792-vnkri20gs19p0k9d352g1tdo4l9lemu8.a
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'f65f4196bdc7f944ad50499890d5f3fcb72c61d7b2f3234f0a17abf0f2b635264f6ab911d2d90dc4c1296cebe0d19748f811108f9f299a08df56386f33451cd0'
+  # config.secret_key = '5533421b275ecdfa8413de84d55cb812f23eca133ddd44e6b0c6d0b66b2977dc720393dea31d590a84038133a35d8bbf23101788974aa8802c66afd6452df6bf'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +99,7 @@ config.omniauth :google_oauth2, "299785365792-vnkri20gs19p0k9d352g1tdo4l9lemu8.a
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'c1ffd42cd222358eb914172c72a5f9864db9e98443b57e338d651b9dafce474775c285e9f0304a82a41158af1f54f83c617d44011ea26ecc538178db1f59950d'
+  # config.pepper = '54c6709c78ec23e0d8158da274f48964c94ac4f7816894a86a7004226968b7b0b45570a203e7171d4cb6b24f0e0ddc3d02399d09e8a8f11fe8a8a22a709414ba'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

@@ -1,11 +1,11 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  
   # Guests can only see index & show.
   before_filter :authenticate_user!, except: [:index, :show]
 
-  # GET /ideas
-  # GET /ideas.json
+  # Sets the variable for ideas for the method to be called from views.
   def index
     @ideas = Idea.all
     @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
@@ -17,22 +17,18 @@ class IdeasController < ApplicationController
     end
   end
 
-  # GET /ideas/1
-  # GET /ideas/1.json
+  # Read + Show action for posted ideas.
   def show
   end
 
-  # GET /ideas/new
   def new
     @idea = current_user.ideas.build
   end
 
-  # GET /ideas/1/edit
   def edit
   end
 
-  # POST /ideas
-  # POST /ideas.json
+  # Create action for new ideas.
   def create
     @idea = current_user.ideas.build(idea_params)
 
@@ -47,8 +43,7 @@ class IdeasController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ideas/1
-  # PATCH/PUT /ideas/1.json
+  # Edit action for updating user's posted idea.
   def update
     respond_to do |format|
       if @idea.update(idea_params)
@@ -61,8 +56,7 @@ class IdeasController < ApplicationController
     end
   end
 
-  # DELETE /ideas/1
-  # DELETE /ideas/1.json
+  # Deletes the idea.
   def destroy
     @idea.destroy
     respond_to do |format|
@@ -82,7 +76,7 @@ class IdeasController < ApplicationController
       redirect_to ideas_path, alert: "You are not allowed to edit this." if @idea.nil?
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Only allows the white list through.
     def idea_params
       params.require(:idea).permit(:latitude, :longitude, :Idea, :Destination, :Start, :End, :Tags, :image)
     end
