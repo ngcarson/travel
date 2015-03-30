@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
     @hash = Gmaps4rails.build_markers(@ideas) do |idea, marker|
       marker.lat idea.latitude
       marker.lng idea.longitude
-      
+
       # Associates the travel "Idea" description in the Google map's marker pin. 
       marker.infowindow idea.Idea
     end
