@@ -1,3 +1,4 @@
 $(".count").html("<%= pluralize(@idea.comments.count, 'Comment') %>");
 $("#render").append("<%= j render(:partial => @comment) %>");
+$("#render").html("<%= j render(@idea.comments.reverse) %>");
 $("#new_comment")[0].reset();
