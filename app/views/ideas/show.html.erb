@@ -47,9 +47,11 @@
 
 <div id="comments">
   <h2 class="count">
-    <%= @idea.comments.count %> <span id="cnt">Comment(s)</span>
+    <%= pluralize(@idea.comments.count, 'Comment') %>
   </h2>
+  <ul id="render">  
     <%= render @idea.comments.reverse %>
+  </ul>
   <h3>Reply to thread</h3>
     <%= render "comments/form" %>
 </div>

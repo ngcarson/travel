@@ -8,11 +8,13 @@ class CommentsController < ApplicationController
 		# Must include "comment.save" to successfully indicate User's email.
 		@comment.save
 
-		if @comment.save
-			redirect_to idea_path(@idea)
-		else
+		#if @comment.save
+		respond_to do |format|
+			format.html { redirect_to idea_path(@idea) }
+			format.js
+		#else
 			# Redirects user back to edit comments form if post fails.
-      render 'edit'
+      #render 'edit'
 		end
 	end
 
