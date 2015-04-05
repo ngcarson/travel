@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+	before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  
+  # Guests can only see index & show.
+  before_filter :authenticate_user!, except: [:index, :show]
+  
 	def create
 		# Post a comment associated to the current Idea ID.
 		@idea = Idea.find(params[:idea_id])
