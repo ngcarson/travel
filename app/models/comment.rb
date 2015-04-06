@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   
   # Form validator for comment field.
-  validates :comment, length: { maximum: 10, too_long: "%{count} characters is the maximum allowed" }, :allow_blank => false
+  validates :comment, length: { maximum: 255, too_long: "%{count} characters is the maximum allowed" }, :allow_blank => false
 end
