@@ -1,4 +1,4 @@
 <%= simple_form_for([@idea, @idea.comments.build], remote: true) do |f| %>
-  <%= f.input :comment, :input_html => { :maxlength => 255 }, hint: 'Maximum limit of 255 characters allowed.' %>
+  <%= f.input :comment, :input_html => { :maxlength => 255 }, hint: 'Maximum limit of 255 characters allowed & Message cannot be blank.' %>
   <%= f.submit %>
 <% end %>
